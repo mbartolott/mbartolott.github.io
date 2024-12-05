@@ -69,6 +69,7 @@
         <a href="#" onclick="showPage('landing')">Home</a>
         <a href="#" onclick="showPage('login')">Login</a>
         <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+        <a href="#" onclick="showPage('settings')">Settings</a> <!-- New link to Settings -->
     </nav>
 
     <!-- Landing Page -->
@@ -122,6 +123,34 @@
         <a href="#" class="button" onclick="showPage('landing')">Logout</a>
     </div>
 
+    <!-- Settings Page -->
+    <div id="settings" class="container hidden">
+        <h1>Account Settings</h1>
+        <div class="dashboard-widget">
+            <h3>Change Password</h3>
+            <form>
+                <label for="current-password">Current Password:</label><br>
+                <input type="password" id="current-password" name="current-password" placeholder="Enter current password" required><br><br>
+                <label for="new-password">New Password:</label><br>
+                <input type="password" id="new-password" name="new-password" placeholder="Enter new password" required><br><br>
+                <button type="button" onclick="alert('Password change functionality coming soon!')">Change Password</button>
+            </form>
+        </div>
+        <div class="dashboard-widget">
+            <h3>Email Preferences</h3>
+            <form>
+                <label>
+                    <input type="checkbox" name="email-updates"> Receive email updates on account activity
+                </label><br><br>
+                <label>
+                    <input type="checkbox" name="email-newsletters"> Subscribe to monthly newsletters
+                </label><br><br>
+                <button type="button" onclick="alert('Email preferences saved!')">Save Preferences</button>
+            </form>
+        </div>
+        <a href="#" class="button" onclick="showPage('dashboard')">Back to Dashboard</a>
+    </div>
+
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.container');
@@ -131,3 +160,4 @@
     </script>
 </body>
 </html>
+
