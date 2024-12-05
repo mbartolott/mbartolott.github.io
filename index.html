@@ -52,6 +52,15 @@
         .hidden {
             display: none;
         }
+        .dashboard-widget {
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .dashboard-widget h3 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -62,26 +71,55 @@
         <a href="#" onclick="showPage('dashboard')">Dashboard</a>
     </nav>
 
-    <!-- Pages -->
+    <!-- Landing Page -->
     <div id="landing" class="container">
-        <h1>Welcome to the MFA Dashboard</h1>
-        <div class="placeholder">[Landing Page Content]</div>
+        <h1>Welcome to the Multi-Factor Authentication (MFA) Dashboard</h1>
+        <p>This is a secure platform for managing and monitoring your MFA configuration.</p>
+        <div class="placeholder">[MFA Overview]</div>
+        <p>Multi-Factor Authentication (MFA) helps secure your accounts by requiring more than just a password. Here, you can manage your MFA settings, monitor login attempts, and keep your account protected.</p>
+        <a href="#" class="button" onclick="showPage('login')">Login to Your Account</a>
     </div>
 
+    <!-- Login Page -->
     <div id="login" class="container hidden">
         <h1>Login</h1>
         <form>
             <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br><br>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
             <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
             <button type="button" onclick="alert('Login functionality coming soon!')">Login</button>
         </form>
+        <a href="#" class="button" onclick="showPage('landing')">Back to Home</a>
     </div>
 
+    <!-- Dashboard Page -->
     <div id="dashboard" class="container hidden">
-        <h1>Dashboard</h1>
-        <div class="placeholder">[Dashboard Content]</div>
+        <h1>User Dashboard</h1>
+        <div class="dashboard-widget">
+            <h3>Account Summary</h3>
+            <p>Account Name: <strong>John Doe</strong></p>
+            <p>Status: <span style="color: green;">Active</span></p>
+            <p>MFA Status: <span style="color: green;">Enabled</span></p>
+        </div>
+        <div class="dashboard-widget">
+            <h3>Recent Activity</h3>
+            <ul>
+                <li>Login attempt from IP address 192.168.1.101 - Successful</li>
+                <li>Login attempt from IP address 192.168.1.102 - Failed (Invalid OTP)</li>
+                <li>Login attempt from IP address 192.168.1.103 - Successful</li>
+            </ul>
+        </div>
+        <div class="dashboard-widget">
+            <h3>Manage MFA Devices</h3>
+            <p>Current Devices: 2</p>
+            <ul>
+                <li>iPhone 12 (App-based authentication)</li>
+                <li>Android Device (SMS-based authentication)</li>
+            </ul>
+            <a href="#" class="button">Add New Device</a>
+        </div>
+        <a href="#" class="button" onclick="showPage('landing')">Logout</a>
     </div>
 
     <script>
