@@ -14,7 +14,8 @@
             background-color: #333;
             color: white;
             padding: 10px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
         }
         nav a {
             color: white;
@@ -37,49 +38,58 @@
             margin-bottom: 20px;
         }
         .button {
-            display: inline-block;
             padding: 10px 20px;
             background-color: #333;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             margin: 10px 0;
+            display: inline-block;
         }
         .button:hover {
             background-color: #555;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#">Login</a>
-        <a href="#">Create Account</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Settings</a>
-        <a href="#">Logs</a>
+        <a href="#" onclick="showPage('landing')">Home</a>
+        <a href="#" onclick="showPage('login')">Login</a>
+        <a href="#" onclick="showPage('dashboard')">Dashboard</a>
     </nav>
 
-    <!-- Landing Page -->
-    <div class="container">
+    <!-- Pages -->
+    <div id="landing" class="container">
         <h1>Welcome to the MFA Dashboard</h1>
-        <div class="placeholder">[Landing Page Placeholder]</div>
-        <a href="#" class="button">Enable New Method</a>
-        <a href="#" class="button">View Logs</a>
+        <div class="placeholder">[Landing Page Content]</div>
     </div>
 
-    <!-- Sample Secondary Page: Settings -->
-    <div class="container">
-        <h2>Settings</h2>
-        <div class="placeholder">[Settings Section Placeholder]</div>
-        <a href="#" class="button">Save Changes</a>
+    <div id="login" class="container hidden">
+        <h1>Login</h1>
+        <form>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="button" onclick="alert('Login functionality coming soon!')">Login</button>
+        </form>
     </div>
 
-    <!-- Sample Secondary Page: Logs -->
-    <div class="container">
-        <h2>Logs</h2>
-        <div class="placeholder">[Logs Table Placeholder]</div>
-        <a href="#" class="button">Export Logs</a>
+    <div id="dashboard" class="container hidden">
+        <h1>Dashboard</h1>
+        <div class="placeholder">[Dashboard Content]</div>
     </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.container');
+            pages.forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
