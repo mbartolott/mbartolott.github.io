@@ -69,7 +69,7 @@
         <a href="#" onclick="showPage('landing')">Home</a>
         <a href="#" onclick="showPage('login')">Login</a>
         <a href="#" onclick="showPage('dashboard')">Dashboard</a>
-        <a href="#" onclick="showPage('settings')">Settings</a> <!-- New link to Settings -->
+        <a href="#" onclick="showPage('settings')">Settings</a>
     </nav>
 
     <!-- Landing Page -->
@@ -79,6 +79,7 @@
         <div class="placeholder">[MFA Overview]</div>
         <p>Multi-Factor Authentication (MFA) helps secure your accounts by requiring more than just a password. Here, you can manage your MFA settings, monitor login attempts, and keep your account protected.</p>
         <a href="#" class="button" onclick="showPage('login')">Login to Your Account</a>
+        <a href="#" class="button" onclick="showPage('create-account')">Create an Account</a> <!-- Link to Create Account Page -->
     </div>
 
     <!-- Login Page -->
@@ -92,6 +93,7 @@
             <button type="button" onclick="alert('Login functionality coming soon!')">Login</button>
         </form>
         <a href="#" class="button" onclick="showPage('landing')">Back to Home</a>
+        <a href="#" class="button" onclick="showPage('create-account')">Create an Account</a> <!-- Link to Create Account Page -->
     </div>
 
     <!-- Dashboard Page -->
@@ -151,6 +153,23 @@
         <a href="#" class="button" onclick="showPage('dashboard')">Back to Dashboard</a>
     </div>
 
+    <!-- Create Account Page -->
+    <div id="create-account" class="container hidden">
+        <h1>Create an Account</h1>
+        <form>
+            <label for="new-username">Username:</label><br>
+            <input type="text" id="new-username" name="new-username" placeholder="Choose a username" required><br><br>
+            <label for="new-email">Email:</label><br>
+            <input type="email" id="new-email" name="new-email" placeholder="Enter your email" required><br><br>
+            <label for="new-password">Password:</label><br>
+            <input type="password" id="new-password" name="new-password" placeholder="Choose a password" required><br><br>
+            <label for="confirm-password">Confirm Password:</label><br>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required><br><br>
+            <button type="button" onclick="alert('Account creation functionality coming soon!')">Create Account</button>
+        </form>
+        <a href="#" class="button" onclick="showPage('login')">Already have an account? Login</a>
+    </div>
+
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.container');
@@ -160,4 +179,5 @@
     </script>
 </body>
 </html>
+
 
